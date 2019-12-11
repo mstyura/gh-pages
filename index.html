@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <p>Will display HTTP site within HTTPS site</p>
+    <iframe src="http://example.com/" style="width: 100%">
+    </iframe>
+    <script>
+        function reqListener () {
+            console.log(this.responseText);
+        }
+        var xhr = new XMLHttpRequest()
+        xhr.addEventListener("load", reqListener);
+        xhr.open("GET", "http://www.example.org/example.txt");
+        xhr.send();
+    </script>
+</body>
+</html>
